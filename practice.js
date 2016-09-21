@@ -23,17 +23,27 @@
   //email --> which is a string
   //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 
-    //Code Here
+    var user = function(){
+      username: 'bob',
+      email: "td.dsr@asdf",
+      getUsername = function () {
+         return this.username;
+      }
+   };
 
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
 
 
-//Next Problem
+getUsername.call(user);
 
 
 // Write the function definitions which will make the following function invocations function properly.
 
-  //Function Invocations Here
+  var Car = function(make, model, year) {
+     this.make = make;
+     this.model = model;
+     this.year = year;
+ }
 
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
